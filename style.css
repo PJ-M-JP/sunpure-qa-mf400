@@ -1,0 +1,47 @@
+/* Tailwind 配置 */
+tailwind.config = {
+    theme: {
+        extend: {
+            colors: {
+                primary: '#165DFF',
+                secondary: '#FF7D00',
+                neutral: {
+                    100: '#F5F7FA',
+                    200: '#E4E6EB',
+                    300: '#C9CDD4',
+                    400: '#86909C',
+                    500: '#4E5969',
+                    600: '#272E3B',
+                    700: '#1D2129'
+                }
+            },
+            fontFamily: {
+                inter: ['Inter', 'system-ui', 'sans-serif'],
+            },
+            boxShadow: {
+                'card': '0 4px 20px rgba(0, 0, 0, 0.08)',
+                'card-hover': '0 8px 30px rgba(0, 0, 0, 0.12)',
+                'modal': '0 12px 40px rgba(0, 0, 0, 0.15)'
+            }
+        }
+    }
+}
+
+/* 自定义工具类 */
+@layer utilities {
+    .content-auto {
+        content-visibility: auto;
+    }
+    .text-shadow {
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .transition-all-300 {
+        transition: all 0.3s ease;
+    }
+    .card-hover {
+        @apply transition-all-300 hover:shadow-card-hover hover:-translate-y-1;
+    }
+    .gradient-bg {
+        background: linear-gradient(135deg, #165DFF 0%, #0F4CDB 100%);
+    }
+}
